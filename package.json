@@ -4,13 +4,24 @@
   "description": "adminpanel",
   "main": "sever.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
-  "author": "Harmeet Singh",
+  "author": "Cheshtaa",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
+    "firebase": "^7.17.2",
     "request": "^2.88.2"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cheshtaaagarrwal/Grocera-app-Login.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cheshtaaagarrwal/Grocera-app-Login/issues"
+  },
+  "homepage": "https://github.com/cheshtaaagarrwal/Grocera-app-Login#readme"
 }
