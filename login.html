@@ -8,14 +8,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <style type="text/css">
-    
-    .one {
-            border: 2px solid red;
-            border-radius: 25px;
-    }
-
-  </style>
 
   <title>Admin Login</title>
 
@@ -30,9 +22,26 @@
 
 </head>
 
-<body style="background-color:#E0FFFF;">
+<body style="background-color:#FFFFFF;">
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="/__/firebase/7.17.1/firebase-app.js"></script>
+  <script src="/__/firebase/7.17.1/firebase-auth.js"></script>
+  <script src="/__/firebase/init.js"></script>
 
-
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyAD8Wxj_iP80VY4cRRlJ7EbrKin1IZ5yoE",
+      authDomain: "test-app-e2b09.firebaseapp.com",
+      databaseURL: "https://test-app-e2b09.firebaseio.com",
+      projectId: "test-app-e2b09",
+      storageBucket: "test-app-e2b09.appspot.com",
+      messagingSenderId: "696243432348",
+      appId: "1:696243432348:web:24dc81f147820cfbe53659",
+      measurementId: "G-YSB4BZ5DJE"
+    };
+    firebase.initializeApp(firebaseConfig);
+  </script>
   <div class="container">
 
     <!-- Outer Row -->
@@ -40,7 +49,7 @@
 
       <div class="col-xl-10 col-lg-12 col-md-9">
 
-        <div class="card o-hidden border-0 shadow-lg my-5 one">
+        <div class="card o-hidden border-0 shadow-lg my-5">
           <div class="card-body p-0">
             <!-- Nested Row within Card Body -->
             <div class="row">
@@ -49,15 +58,15 @@
                   <div class="text-center">
                     <br>
                     <br><br>
+                    <br><br>
                     <br>
-                    
-                    <h1 class="h4 text-gray-900 mb-4"><b>Welcome Back!</b></h1>
+                    <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                   </div>
                   <form class="user">
                     <div class="form-group">
                       <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address...">
                     </div>
-                    <div class="form-group pt-1">
+                    <div class="form-group">
                       <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
                     </div>
                     <div class="form-group">
@@ -72,6 +81,8 @@
                    
                     
                   </form>
+                 
+                
                   <hr>
                   <div class="text-center">
                     <a class="small" href="forgot-password.html">Forgot Password?</a>
@@ -81,7 +92,7 @@
               </div>
             </div>
             <div class="col-lg-6 d-none d-lg-block bg-login-image" >
-                <img src="./img/veg.jpg" alt="dog" height="600" width="450" />
+                <img src="./img/veg.jpg" alt="dog" />
              </div>
             </div>
               
@@ -96,7 +107,22 @@
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-
+<script>
+    firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+                    
+                    var errorCode = error.code;
+                    var errorMessage = error.message;
+                   
+                    if (errorCode === 'auth/wrong-password') {
+                      alert('Wrong password.');
+                    } else {
+                      alert(errorMessage);
+                    }
+                    console.log(error);
+                    
+                    // [END_EXCLUDE]
+                  });
+</script>
  
 
 </body>
